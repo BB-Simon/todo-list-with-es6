@@ -56,7 +56,7 @@ ul {
 .todo-list-item {
   width: 100%;
   height: 64px;
-  padding: 24px;
+  padding: 14px 20px;
   border-bottom: 1px solid #f3f3f3;
 }
 
@@ -72,11 +72,13 @@ ul {
   justify-content: space-between;
 }
 
-#todo {
+.add-input,
+.edit-input {
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 22px;
   font-weight: 300;
+  font-style: italic;
   padding: 6px 12px;
   margin-right: 4px;
   color: #333;
@@ -84,15 +86,19 @@ ul {
   outline: none;
 }
 
-#todo::placeholder {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 300;
-  font-style: italic;
+.edit-input {
+  display: none;
 }
 
-#todo:hover,
-#todo:focus {
+.edit {
+  display: block;
+  background-color: rgb(255, 252, 245);
+}
+
+.edit-input:hover,
+.edit-input:focus,
+.add-input:hover,
+.add-input:focus {
   border: none;
   outline: none;
 }
@@ -106,33 +112,70 @@ ul {
   fill: #333;
 }
 
+.mark-icon {
+  display: none;
+  font-size: 20px;
+  color: green;
+}
+
 .todo-list-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: move;
+}
+
+.item-editing {
+  background-color: rgb(255, 252, 245);
 }
 
 .item-info {
+  width: 100%;
   display: flex;
   align-items: center;
 }
 
 .check-icon {
+  display: block;
   color: #333;
   cursor: pointer;
 }
 
 .todo-task {
+  display: inline-block;
+  width: 100%;
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
   color: #333;
-  margin-left: 8px;
+  margin: 0 8px;
+}
+
+.todo-task-edit {
+  display: none;
+}
+
+.action-cta {
+  display: flex;
+  align-items: center;
 }
 
 .ellipsis-icon {
+  display: block;
+  cursor: move;
+}
+
+.trush-icon {
+  display: none;
   cursor: pointer;
+  color: rgb(180, 30, 30);
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 .clear-btn-wrapper {

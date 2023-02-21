@@ -1,22 +1,17 @@
-export default [
-  {
-    index: 1,
-    description: 'Going to university',
-    compeleted: false,
-  },
-  {
-    index: 2,
-    description: 'Doing math homework',
-    compeleted: false,
-  },
-  {
-    index: 3,
-    description: 'Visiting grandmom',
-    compeleted: false,
-  },
-  {
-    index: 4,
-    description: 'Hanging out with frinds',
-    compeleted: false,
-  },
-];
+import Todo from './todo.js';
+
+class Storage {
+  static get() {
+    this.todos = JSON.parse(localStorage.getItem('todos'));
+    if (Array.isArray(this.todos) && this.todos.length) {
+      return this.todos.map((todo) => new Todo(todo.index, todo.description, todo.completed));
+    }
+    return [];
+  }
+
+  static save(todos) {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
+}
+
+export default Storage;
