@@ -33,14 +33,34 @@ class DomMenupulator {
     this.sqr = document.createElement('i');
     this.sqr.className = 'fa-regular fa-square';
     this.checkIcon.appendChild(this.sqr);
+    if (todo.completed) {
+      this.checkIcon.style.display = 'none';
+    } else {
+      this.checkIcon.style.display = 'block';
+    }
+
+    this.checkIcon.addEventListener('click', this.markAsCopleted.bind({
+      li: this.li,
+      todo,
+    }));
 
     // Mark icon
     this.markIcon = document.createElement('i');
     this.markIcon.className = 'fa-solid fa-check mark-icon';
+    if (todo.completed) {
+      this.markIcon.style.display = 'block';
+    } else {
+      this.markIcon.style.display = 'none';
+    }
 
     this.descriptionSpan = document.createElement('span');
     this.descriptionSpan.classList.add('todo-task');
     this.descriptionSpan.innerText = todo.description;
+    if (todo.completed) {
+      this.descriptionSpan.style.textDecoration = 'line-through';
+    } else {
+      this.descriptionSpan.style.textDecoration = 'noemal';
+    }
 
     // Edit input
     this.editInput = document.createElement('input');
@@ -116,6 +136,16 @@ class DomMenupulator {
     e.stopPropagation();
     DomMenupulator.todoList.todosContainer.removeChild(this.li);
     DomMenupulator.todoList.remove(this.todo);
+  }
+
+  static markAsCopleted(e) {
+    e.stopPropagation();
+    this.infoDiv = this.li.children[0].children;
+    this.infoDiv[0].style.display = 'none';
+    this.infoDiv[1].style.display = 'block';
+    this.infoDiv[2].style.textDecoration = 'line-through';
+
+    DomMenupulator.todoList.complete(this.todo);
   }
 }
 
