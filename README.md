@@ -55,14 +55,6 @@
 
 ### Key Features <a name="key-features"></a>
 - **[Dynamic Todo List]**
-- **[Read Tooo List from Local Storage]**
-- **[Add a New Item Todo List]**
-- **[Edit an Item from The Todo List]**
-- **[Remove an Item from The Todo List]**
-- **[Mark an Item of Todo List as Completed]**
-- **[Remove All Items of Todo List that have marked as Completed]**
-- **[Reset Todo list indexes]**
-- **[Sort Todo list by index]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -95,7 +87,7 @@ In order to run this project you need:
 
 > Clone this repository to your desired folder:
 
-git clone https://github.com/BB-Simon/todo-list-es6
+git clone https://github.com/BB-Simon/todo-list-with-es6
 
 <!-- AUTHORS -->
 
@@ -123,7 +115,7 @@ git clone https://github.com/BB-Simon/todo-list-es6
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/BB-Simon/todo-list-es6/issues/).
+Feel free to check the [issues page](https://github.com/BB-Simon/todo-list-with-es6/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
