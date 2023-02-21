@@ -1,0 +1,159 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+}
+
+ul li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+}
+
+.section-todo {
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px 20px;
+}
+
+.todo-container {
+  max-width: 600px;
+  min-width: 600px;
+  background-color: #fff;
+  margin: 0 auto;
+
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 3px 3px #aaa;
+  border-radius: 4px;
+}
+
+.todo-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+
+.todo-header,
+.add-todo-form,
+.clear-btn-wrapper,
+.todo-list-item {
+  width: 100%;
+  height: 64px;
+  padding: 24px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.todo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-todo-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#todo {
+  width: 100%;
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 300;
+  padding: 6px 12px;
+  margin-right: 4px;
+  color: #333;
+  border: none;
+  outline: none;
+}
+
+#todo::placeholder {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+#todo:hover,
+#todo:focus {
+  border: none;
+  outline: none;
+}
+
+#input-icon {
+  transform: rotate(90deg);
+  font-weight: 300;
+}
+
+#input-icon path {
+  fill: #333;
+}
+
+.todo-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: move;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+}
+
+.check-icon {
+  color: #333;
+  cursor: pointer;
+}
+
+.todo-task {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #333;
+  margin-left: 8px;
+}
+
+.ellipsis-icon {
+  cursor: pointer;
+}
+
+.clear-btn-wrapper {
+  background-color: #f2f2f2;
+  border-bottom: none;
+
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-btn {
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+
+.clear-btn:hover,
+.clear-btn:focus {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
