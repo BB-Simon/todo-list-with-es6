@@ -28,15 +28,13 @@ class DomMenupulator {
     this.infoDiv.classList.add('item-info');
 
     // Check icon
-    this.checkIcon = document.createElement('span');
+    this.checkIcon = document.createElement('input');
+    this.checkIcon.setAttribute('type', 'checkbox');
     this.checkIcon.className = 'check-icon';
-    this.sqr = document.createElement('i');
-    this.sqr.className = 'fa-regular fa-square';
-    this.checkIcon.appendChild(this.sqr);
-
-    // Mark icon
-    this.markIcon = document.createElement('i');
-    this.markIcon.className = 'fa-solid fa-check mark-icon';
+    this.checkIcon.addEventListener('click', this.markAsCopleted.bind({
+      li: this.li,
+      todo,
+    }));
 
     this.descriptionSpan = document.createElement('span');
     this.descriptionSpan.classList.add('todo-task');
@@ -48,7 +46,6 @@ class DomMenupulator {
     this.editInput.classList.add('edit-input');
 
     this.infoDiv.appendChild(this.checkIcon);
-    this.infoDiv.appendChild(this.markIcon);
     this.infoDiv.appendChild(this.descriptionSpan);
     this.infoDiv.appendChild(this.editInput);
 
@@ -76,36 +73,35 @@ class DomMenupulator {
     return this.li;
   }
 
-  static enableEditing(e) {
+  static enableEditing() {
     if (this.editing) {
       return;
     }
-    e.stopPropagation();
     this.editing = true;
     this.li.classList.add('item-editing');
     this.infoDiv = this.li.children[0].children;
     this.ctaDiv = this.li.children[1].children;
 
-    this.infoDiv[2].style.display = 'none';
+    this.infoDiv[1].style.display = 'none';
     this.ctaDiv[0].style.display = 'none';
 
-    this.infoDiv[3].style.display = 'block';
-    this.infoDiv[3].focus();
+    this.infoDiv[2].style.display = 'block';
+    this.infoDiv[2].focus();
     this.ctaDiv[1].style.display = 'block';
 
-    const val = this.infoDiv[2].innerText;
-    this.infoDiv[3].value = val;
+    const val = this.infoDiv[1].innerText;
+    this.infoDiv[2].value = val;
 
-    this.infoDiv[3].addEventListener('keydown', (e) => {
+    this.infoDiv[2].addEventListener('keydown', (e) => {
       if (e.keyCode === 13) {
         const newValue = e.target.value;
         this.todo.description = newValue;
-        this.infoDiv[2].innerText = newValue;
+        this.infoDiv[1].innerText = newValue;
         this.li.classList.remove('item-editing');
-        this.infoDiv[2].style.display = 'block';
+        this.infoDiv[1].style.display = 'block';
         this.ctaDiv[0].style.display = 'block';
         DomMenupulator.todoList.edit(this.todo);
-        this.infoDiv[3].style.display = 'none';
+        this.infoDiv[2].style.display = 'none';
         this.ctaDiv[1].style.display = 'none';
         this.editing = false;
       }
@@ -116,6 +112,10 @@ class DomMenupulator {
     e.stopPropagation();
     DomMenupulator.todoList.todosContainer.removeChild(this.li);
     DomMenupulator.todoList.remove(this.todo);
+  }
+
+  static markAsCopleted(e) {
+    e.stopPropagation();
   }
 }
 
