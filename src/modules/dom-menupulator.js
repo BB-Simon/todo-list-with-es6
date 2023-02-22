@@ -31,6 +31,11 @@ class DomMenupulator {
     this.checkIcon = document.createElement('input');
     this.checkIcon.setAttribute('type', 'checkbox');
     this.checkIcon.className = 'check-icon';
+    if (todo.completed) {
+      this.checkIcon.checked = true;
+    } else {
+      this.checkIcon.checked = false;
+    }
     this.checkIcon.addEventListener('click', this.markAsCopleted.bind({
       li: this.li,
       todo,
@@ -39,6 +44,11 @@ class DomMenupulator {
     this.descriptionSpan = document.createElement('span');
     this.descriptionSpan.classList.add('todo-task');
     this.descriptionSpan.innerText = todo.description;
+    if (todo.completed) {
+      this.descriptionSpan.style.textDecoration = 'line-through';
+    } else {
+      this.descriptionSpan.style.textDecoration = 'noemal';
+    }
 
     // Edit input
     this.editInput = document.createElement('input');
@@ -116,6 +126,14 @@ class DomMenupulator {
 
   static markAsCopleted(e) {
     e.stopPropagation();
+    if (this.todo.completed) {
+      e.target.checked = true;
+      return;
+    }
+    this.infoDiv = this.li.children[0].children;
+    this.infoDiv[1].style.textDecoration = 'line-through';
+
+    DomMenupulator.todoList.complete(this.todo);
   }
 }
 

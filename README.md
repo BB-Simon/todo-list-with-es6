@@ -59,6 +59,10 @@
 - **[Add a New Item Todo List]**
 - **[Edit an Item from The Todo List]**
 - **[Remove an Item from The Todo List]**
+- **[Mark an Item of Todo List as Completed]**
+- **[Remove All Items of Todo List that have marked as Completed]**
+- **[Reset Todo list indexes]**
+- **[Sort Todo list by index]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
