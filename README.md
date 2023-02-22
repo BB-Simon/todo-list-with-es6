@@ -55,6 +55,10 @@
 
 ### Key Features <a name="key-features"></a>
 - **[Dynamic Todo List]**
+- **[Read Tooo List from Local Storage]**
+- **[Add a New Item Todo List]**
+- **[Edit an Item from The Todo List]**
+- **[Remove an Item from The Todo List]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
