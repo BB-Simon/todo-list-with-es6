@@ -37,4 +37,18 @@ describe('Test todo list', () => {
     expect(todos).toHaveLength(2);
     expect(store.getItem('todos')).toHaveLength(2);
   });
+
+  test('Remove an item from todolist and store', () => {
+    const todoList = new Todolist(todos);
+    todoList.remove(0);
+    expect(todos).toHaveLength(1);
+    expect(store.getItem('todos')).toHaveLength(1);
+  });
+
+  test('Remove another item from todolist and store', () => {
+    const todoList = new Todolist(todos);
+    todoList.remove(0);
+    expect(todos).toHaveLength(0);
+    expect(store.getItem('todos')).toHaveLength(0);
+  });
 });
