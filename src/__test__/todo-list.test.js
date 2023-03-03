@@ -18,9 +18,19 @@ const mockRemove = jest.fn((index) => {
   store.setItem('todos', todos);
 });
 
+const mockEdit = jest.fn((index, updatedDescription) => {
+  todos[index].description = updatedDescription;
+});
+
+const mockComplete = jest.fn((index) => {
+  todos[index].completed = true;
+});
+
 Todolist.mockImplementation(() => ({
   add: mockAdd,
   remove: mockRemove,
+  edit: mockEdit,
+  complete: mockComplete,
 }));
 
 describe('Test todo list', () => {
