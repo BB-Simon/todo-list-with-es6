@@ -26,11 +26,27 @@ const mockComplete = jest.fn((index) => {
   todos[index].completed = true;
 });
 
+const mockRemoveCompleted = jest.fn(() => {
+  todos = todos.filter((todo) => !todo.completed);
+});
+
+const mockSortedTodos = jest.fn(() => todos.sort((a, b) => a.index - b.index));
+
+
+const mockResetTodos = jest.fn(() => {
+  todos.forEach((todo, index) => {
+    todo.index = index + 1;
+  });
+});
+
 Todolist.mockImplementation(() => ({
   add: mockAdd,
   remove: mockRemove,
   edit: mockEdit,
   complete: mockComplete,
+  sortedTodos: mockSortedTodos,
+  resestTodos: mockResetTodos,
+  removeCompleted: mockRemoveCompleted
 }));
 
 describe('Test todo list', () => {
