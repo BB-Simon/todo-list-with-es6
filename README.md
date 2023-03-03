@@ -99,13 +99,17 @@ git clone https://github.com/BB-Simon/todo-list-with-es6
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
 👤  **BB-Simon**
 
 - GitHub: [@githubhandle](https://github.com/BB-Simon) 
-- Twitter: [@twitterhandle](https://twitter.com/bb_s_imon)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/bb-simon/) 
+
+👤  **Mudassir Nazir**
+
+- GitHub: [@githubhandle](https://github.com/Rana-Mudassir)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/rana-mudassir-nazir-03541114a/) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
