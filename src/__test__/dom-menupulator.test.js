@@ -2,10 +2,6 @@
  * @jest-environment jsdom
  */
 
-import DomMenupulator from '../modules/dom-menupulator.js';
-
-jest.mock('../modules/dom-menupulator.js');
-
 describe('Test todo list at DOM', () => {
   test('Add a new li to the ul', () => {
     document.body.innerHTML = '<div>'
@@ -21,9 +17,11 @@ describe('Test todo list at DOM', () => {
 
   test('Remove a li from the ul', () => {
     document.body.innerHTML = '<div>'
-      + '  <ul id="list"></ul>'
+      + '  <ul id="list"><li id="item1">Item 1</li></ul>'
       + '</div>';
     const list = document.querySelector('#list');
+    const item1 = document.querySelector('#item1');
+    list.removeChild(item1);
     const childList = list.children;
     expect(childList).toHaveLength(0);
   });
