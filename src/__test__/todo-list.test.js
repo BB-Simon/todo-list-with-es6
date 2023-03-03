@@ -11,10 +11,16 @@ const mockAdd = jest.fn((newTask) => {
   const newTodo = new Todo(index, newTask, false);
   todos.push(newTodo);
   store.setItem('todos', todos);
+}); 
+
+const mockRemove = jest.fn((index) => {
+  todos.splice(index, 1);
+  store.setItem('todos', todos);
 });
 
 Todolist.mockImplementation(() => ({
   add: mockAdd,
+  remove: mockRemove,
 }));
 
 describe('Test todo list', () => {
