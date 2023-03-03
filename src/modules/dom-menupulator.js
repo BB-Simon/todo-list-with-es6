@@ -72,7 +72,7 @@ class DomMenupulator {
     this.tr = document.createElement('i');
     this.tr.className = 'fa-regular fa-trash-can';
     this.trushIcon.appendChild(this.tr);
-    this.trushIcon.addEventListener('click', this.delet.bind({ li: this.li, todo }));
+    this.trushIcon.addEventListener('click', this.delete.bind({ li: this.li, todo }));
 
     this.ctaDiv.appendChild(this.ellipsIcon);
     this.ctaDiv.appendChild(this.trushIcon);
@@ -118,7 +118,7 @@ class DomMenupulator {
     });
   }
 
-  static delet(e) {
+  static delete(e) {
     e.stopPropagation();
     DomMenupulator.todoList.todosContainer.removeChild(this.li);
     DomMenupulator.todoList.remove(this.todo);
